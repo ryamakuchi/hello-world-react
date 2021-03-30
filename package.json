@@ -28,9 +28,7 @@
     "lint:style": "stylelint 'src/**/*.css'",
     "lint:style:fix": "stylelint --fix 'src/**/*.css'",
     "lint:conflict": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "postinstall": "typesync",
-    "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "postinstall": "typesync"
   },
   "eslintConfig": {
     "extends": [
@@ -66,7 +64,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^6.0.0",
+    "husky": "^4.0.0",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "stylelint": "^13.12.0",
@@ -75,12 +73,17 @@
     "stylelint-order": "^4.1.0",
     "typesync": "^0.8.0"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "yarn eslint --fix"
+      "eslint --fix"
     ],
     "src/**/*.css": [
-      "yarn stylelint --fix"
+      "stylelint --fix"
     ]
   }
 }
