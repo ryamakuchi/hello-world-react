@@ -1,19 +1,18 @@
-import React from 'react'
+import React from 'react';
 
 const TextInput: React.FC = () => {
-  const inputRef = React.useRef<HTMLInputElement>(null)
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   const handleClick = (): void => {
-    console.log(inputRef.current)
-    if (inputRef.current) inputRef.current.focus()
+    if (inputRef.current) inputRef.current.focus();
   };
 
   return (
     <div>
       <input type="text" ref={inputRef} />
-      <input type="button" value="Focus" onClick={handleClick}/>
+      <input type="button" value="Focus" onClick={handleClick} />
     </div>
-  )
-}
+  );
+};
 
-export default TextInput
+export default TextInput;
