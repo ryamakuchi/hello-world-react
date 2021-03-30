@@ -1,6 +1,0 @@
-{
-  "prettier.configPath": ".prettierrc",
-  "prettier.prettierPath": "./node_modules/prettier",
-  "prettier.singleQuote": true,
-  "editor.formatOnSave": true
-}
